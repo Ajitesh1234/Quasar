@@ -1,0 +1,64 @@
+<h1 align="center">
+  <img src="fastlane/metadata/android/en-US/images/icon_round.webp" width="80" vertical-align="middle"><br>
+  SoundPod
+</h1>
+
+<p align="center">
+  <strong>A minimalist, YouTube Music client for Android.</strong><br>
+  Built with Jetpack Compose.
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Platform-Android-brightgreen.svg" alt="Platform">
+  <a title="GPL-3.0-only" target="_blank" href="https://spdx.org/licenses/GPL-3.0-only.html"><img src="https://img.shields.io/badge/License-GPL--3.0--only-blue.svg" alt="License"></a>
+  <a href="https://f-droid.org/packages/com.github.soundpod/"><img src="https://img.shields.io/badge/F--Droid-Available-brightgreen.svg?logo=f-droid" alt="F-Droid Status"></a>
+  <a title="Crowdin" target="_blank" href="https://crowdin.com/project/soundpod"><img src="https://badges.crowdin.net/soundpod/localized.svg"></a>
+  <img src="https://img.shields.io/github/languages/top/arunnechully/SoundPod?logo=kotlin" alt="Top Language">
+</p>
+
+---
+
+## 📸 Screenshots
+
+<p align="center">
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/Home.png" width="30%" alt="Home Screen">
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/Player.png" width="30%" alt="Player View">
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/Seekbar.png" width="30%" alt="Seeker View">
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/Favorites.png" width="30%" alt="Seeker View">
+</p>
+
+---
+
+## ✨ Features
+
+- 🎧 **Background Playback**: Keep the music going while using other apps or with the screen off.
+- ⏬ **Smart Cache**: Automatically cache songs for seamless offline playback.
+- 🔍 **Powerful Search**: Find songs, albums, artists, videos, and playlists directly from YouTube Music.
+- 📖 **Lyrics Support**: Fetch, display, and edit synchronized lyrics in real-time.
+- 🚗 **Android Auto**: Full support for a safe and integrated driving experience.
+- 🛠️ **Audio Control**: Features like skip silence, audio normalization, and sleep timer.
+
+---
+
+## 📲 Installation
+
+### Stable Releases
+You can grab the latest stable APK from the Releases page:
+
+[<img src="https://github.com/machiav3lli/oandbackupx/blob/034b226cea5c1b30eb4f6a6f313e4dadcbb0ece4/badge_github.png" alt="Get it on GitHub" height="60">](https://github.com/arunnechully/SoundPod/releases/latest)
+
+[<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" alt="Get it on F-Droid" height="60">](https://f-droid.org/packages/com.github.soundpod/)
+
+
+---
+
+## 🧩 Credits & Inspiration
+
+Special thanks to:
+
+- [music-you](https://github.com/DanielSevillano/music-you) | [ViMusic](https://github.com/vfsfitvnm/ViMusic) | [RiMusic](https://github.com/fast4x/RiMusic) | [InnerTune](https://github.com/z-huang/InnerTune) | [ViTune](https://github.com/25huizengek1/ViTune) |  [OuterTune](https://github.com/OuterTune/OuterTune) | [Symphony](https://github.com/zyrouge/symphony)
+---
+
+## ℹ️ Disclaimer
+
+This project is not affiliated with, authorized, or endorsed by Google LLC or YouTube. It is an independent open-source project designed for streaming media using publicly accessible APIs.

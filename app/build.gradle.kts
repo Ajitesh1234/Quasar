@@ -1,0 +1,143 @@
+import com.android.build.api.dsl.ApplicationExtension
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
+plugins {
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.kotlin.ksp)
+}
+
+
+kotlin {
+    compilerOptions {
+        jvmTarget = JvmTarget.JVM_17
+        freeCompilerArgs.add("-Xcontext-parameters")
+        freeCompilerArgs.add("-Xannotation-default-target=param-property")
+    }
+}
+
+extensions.configure<ApplicationExtension>("android") {
+    namespace = "com.github.soundpod"
+    compileSdk = 36
+
+    defaultConfig {
+        applicationId = "com.ajitesh.quasar"
+        minSdk = 23
+        //noinspection OldTargetApi
+        targetSdk = 36
+        versionCode = 19
+        versionName = "1.1.1"
+    }
+
+    flavorDimensions += "store"
+
+    productFlavors {
+        create("fdroid") {
+            dimension = "store"
+            buildConfigField("boolean", "ENABLE_UPDATER", "false")
+        }
+        create("github") {
+            dimension = "store"
+            buildConfigField("boolean", "ENABLE_UPDATER", "true")
+        }
+    }
+
+    packaging {
+        resources {
+            excludes += setOf(
+                "assets/dexopt/baseline.prof",
+                "META-INF/*"
+            )
+        }
+    }
+
+    splits {
+        abi {
+            reset()
+            isUniversalApk = true
+        }
+    }
+
+    buildTypes {
+
+        debug {
+            applicationIdSuffix = ".debug"
+        }
+
+        release {
+            isMinifyEnabled = true
+            isShrinkResources = true
+
+            signingConfig = signingConfigs.getByName("debug")
+
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+            isCrunchPngs = false
+        }
+    }
+
+    sourceSets.all {
+        kotlin.directories.add("src/$name/kotlin")
+    }
+
+    buildFeatures {
+        compose = true
+        buildConfig = true
+    }
+
+    dependenciesInfo {
+        includeInApk = false
+        includeInBundle = false
+    }
+
+    compileOptions {
+        isCoreLibraryDesugaringEnabled = true
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+}
+
+ksp {
+    arg("room.schemaLocation", "$projectDir/schemas")
+}
+
+dependencies {
+    implementation(platform(libs.compose.bom))
+    implementation(libs.compose.activity)
+    implementation(libs.coil.compose)
+    implementation(libs.coil.network)
+    implementation(libs.material)
+    implementation(libs.compose.material.icons)
+    implementation(libs.compose.material3)
+    implementation(libs.glance.appwidget)
+    implementation(libs.glance.material3)
+    implementation(libs.compose.navigation)
+    implementation(libs.compose.shimmer)
+    implementation(libs.compose.ui)
+    implementation(libs.compose.ui.util)
+    implementation(libs.core.splashscreen)
+    implementation(libs.lifecycle.viewmodel.compose)
+    implementation(libs.material.motion.compose)
+    implementation(libs.media)
+    implementation(libs.media3.exoplayer)
+    implementation(libs.reorderable)
+    implementation(libs.room)
+    implementation(libs.swipe)
+    implementation(libs.palette.ktx)
+    implementation(libs.compose.lottie)
+    implementation(libs.datastore.preferences)
+    implementation(libs.work.runtime.ktx)
+    implementation(libs.ui.geometry)
+
+    ksp(libs.room.compiler)
+
+    implementation(projects.core.ui)
+    implementation(projects.github)
+    implementation(projects.innertube)
+    implementation(projects.kugou)
+
+    coreLibraryDesugaring(libs.desugaring)
+}
