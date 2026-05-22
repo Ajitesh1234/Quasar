@@ -1,6 +1,6 @@
 <h1 align="center">
   <img src="fastlane/metadata/android/en-US/images/icon_round.webp" width="80" vertical-align="middle"><br>
-  SoundPod
+  Quasar
 </h1>
 
 <p align="center">
@@ -29,28 +29,7 @@
 
 ---
 
-## ✨ Features
 
-- 🎧 **Background Playback**: Keep the music going while using other apps or with the screen off.
-- ⏬ **Smart Cache**: Automatically cache songs for seamless offline playback.
-- 🔍 **Powerful Search**: Find songs, albums, artists, videos, and playlists directly from YouTube Music.
-- 📖 **Lyrics Support**: Fetch, display, and edit synchronized lyrics in real-time.
-- 🚗 **Android Auto**: Full support for a safe and integrated driving experience.
-- 🛠️ **Audio Control**: Features like skip silence, audio normalization, and sleep timer.
-
----
-
-## 📲 Installation
-
-### Stable Releases
-You can grab the latest stable APK from the Releases page:
-
-[<img src="https://github.com/machiav3lli/oandbackupx/blob/034b226cea5c1b30eb4f6a6f313e4dadcbb0ece4/badge_github.png" alt="Get it on GitHub" height="60">](https://github.com/arunnechully/SoundPod/releases/latest)
-
-[<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" alt="Get it on F-Droid" height="60">](https://f-droid.org/packages/com.github.soundpod/)
-
-
----
 
 ## 🧩 Credits & Inspiration
 
